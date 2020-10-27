@@ -23,6 +23,11 @@ public class NotificationController {
     @Autowired
     PushNotificationService pushNotificationService;
 
+    @RequestMapping(value = "/")
+    public @ResponseBody String Main(){
+        return "index";
+    }
+
     @GetMapping(value = "/send")
     public @ResponseBody ResponseEntity<String> send() throws JSONException, InterruptedException  {
         String notifications = PushPeriodicNotifications.PeriodicNotificationJson();
