@@ -14,8 +14,9 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CompletableFuture;
+import org.springframework.stereotype.Controller;
 
-@RestController
+@Controller
 public class NotificationController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -23,10 +24,16 @@ public class NotificationController {
     @Autowired
     PushNotificationService pushNotificationService;
 
-    @RequestMapping(value = "/")
-    public @ResponseBody String Main(){
-        return "index";
+//    @RequestMapping(value = "/")
+//    public @ResponseBody String Main2(){
+//        return "index.html";
+//    }
+
+    @RequestMapping(value = "/notification")
+    public String main(){
+        return "notification.html";
     }
+
 
     @GetMapping(value = "/send")
     public @ResponseBody ResponseEntity<String> send() throws JSONException, InterruptedException  {
