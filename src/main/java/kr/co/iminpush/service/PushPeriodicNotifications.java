@@ -4,19 +4,22 @@ import com.fasterxml.jackson.core.io.JsonEOFException;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class PushPeriodicNotifications {
 
-    public static String PeriodicNotificationJson() throws JsonEOFException {
+    public static String PeriodicNotificationJson() throws JSONException {
         LocalDate localDate = LocalDate.now();
 
         String sampleData[] = {"device token value 1", "device token value 2", "device token value 3"};
 
-        JsonObject jsonObject = new JsonObject();
+        JSONObject jsonObject = new JSONObject();
 
         List<String> tokenList = new ArrayList<String>();
 
@@ -30,14 +33,12 @@ public class PushPeriodicNotifications {
             jsonArray.add(tokenList.get(i));
         }
 
-        jsonObject.add("registration_ids", jsonArray);
+        jsonObject.put("registration_ids", jsonArray);
 
-        JsonObject notification = new JsonObject();
+        JSONObject notification = new JSONObject();
 
-        notification.addProperty("title", "hello!");
-        notification.addProperty("body", "Today is "+localDate.getDayOfWeek().name()+"!");
-//        jsonObject.add(notification);
-//        jsonObject.p
+        notification.put("title", "hello!");
+        notification.put("body", "Today is "+localDate.getDayOfWeek().name()+"!");
 
         System.out.println(jsonObject.toString());
 
