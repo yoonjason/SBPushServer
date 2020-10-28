@@ -47,11 +47,10 @@ public class NotificationController {
 //        return "notification.html";
 //    }
 
-//    @RequestMapping(value = "/test")
-//    public String contentView(Model model) {
-//        model.addAttribute("value", "hi");
-//        return "test.html";
-//    }
+    @RequestMapping(value = "/result", method = RequestMethod.GET)
+    public String result(Model model){
+        return "result";
+    }
 
 
     @RequestMapping("/test")
