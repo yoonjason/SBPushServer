@@ -38,8 +38,8 @@ public class NotificationController {
         logger.info("INFO Level 테스트");
         logger.warn("Warn Level 테스트");
         logger.error("ERROR Level 테스트");
-
-        return "test";
+        System.out.println("/jsp잘 타는지222?");
+        return "index";
     }
 
 //    @RequestMapping(value = "/notification")
