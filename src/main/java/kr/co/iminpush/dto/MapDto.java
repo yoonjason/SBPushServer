@@ -1,5 +1,8 @@
-package kr.co.iminpush.Dto;
+package kr.co.iminpush.dto;
 
+import lombok.Data;
+
+@Data
 public class MapDto {
     private int id;
     private String name;
