@@ -5,7 +5,10 @@
 
 <mapper namespace="kr.co.iminpush.mappers.UserMapper">
     <select id="getUser" resultType="kr.co.iminpush.dto.UserDto" parameterType="String">
-        select *
+        select
+        *
+<!--        token, id, os_type-->
+<!--        , os_type , is_push , created_at , updated_at-->
         from user
     </select>
 </mapper>
